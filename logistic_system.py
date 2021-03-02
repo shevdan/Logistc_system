@@ -178,6 +178,12 @@ class LogisticSystem:
     def track_order(self, order_id: int):
         '''
         Returns information about order by its id
+        >>> my_items = [Item('book',110), Item('chupachups',44)]
+        >>> my_order = Order(user_name = 'Oleg', city = 'Lviv', postoffice = 53, items = my_items)
+        >>> vehicles = [Vehicle(1, True)]
+        >>> log_syst = LogisticSystem(vehicles)
+        >>> log_syst.track_order(my_order.order_id)
+        'No such order.'
         '''
         order = self._find_order(order_id)
         if order:
