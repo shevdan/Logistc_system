@@ -54,7 +54,11 @@ Logistic System Menu
         city = input('Please, input your city: ')
         postoffice = input('Please, input postoffice to deliver: ')
         order = Order(user_name, city, postoffice, self.items)
+        self.items = []
         print(order)
+        # check if there is available vehicle
+        if isinstance(self.log_syst.place_order(order), str):
+            print(self.log_syst.place_order(order))
         self.log_syst.place_order(order)
 
     def trackOrder(self):
